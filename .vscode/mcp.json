@@ -1,0 +1,47 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--output-dir",
+        "/Users/iasmim.oliveira/ai-workspace/workshop-dev-ai-workflow/screenshots"
+      ]
+    },
+    "mcp-atlassian": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "CONFLUENCE_URL",
+        "-e", "CONFLUENCE_USERNAME",
+        "-e", "CONFLUENCE_API_TOKEN",
+        "-e", "JIRA_URL",
+        "-e", "JIRA_USERNAME",
+        "-e", "JIRA_API_TOKEN",
+        "ghcr.io/sooperset/mcp-atlassian:latest"
+      ],
+      "env": {
+        "CONFLUENCE_URL": "https://iasmim-ai-wkp.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "iasmimoliveira10@hotmail.com",
+        "CONFLUENCE_API_TOKEN": "",
+        "JIRA_URL": "https://iasmim-ai-wkp.atlassian.net",
+        "JIRA_USERNAME": "iasmimoliveira10@hotmail.com",
+        "JIRA_API_TOKEN": ""
+      }
+    },
+        "slack": {
+        "command": "npx",
+        "args": [
+            "-y",
+            "@modelcontextprotocol/server-slack"
+        ],
+        "env": {
+            "SLACK_BOT_TOKEN": "",
+            "SLACK_TEAM_ID": "",
+            "SLACK_CHANNEL_IDS": ""
+        }
+    }
+},
+}
